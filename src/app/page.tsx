@@ -1,8 +1,7 @@
 "use client";
 
-import { Box, Heading, Text, Button, HStack, Link, Icon } from "@chakra-ui/react";
+import { Box, Heading, Text, Button } from "@chakra-ui/react";
 import { toaster } from "@/components/ui/toaster"
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 export default function HomePage() {
   const handleDownload = () => {

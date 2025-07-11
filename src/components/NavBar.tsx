@@ -24,7 +24,7 @@ const navLinks = [
 ];
 
 export default function NavBar() {
-  const { isOpen, onToggle } = useDisclosure();
+  const { open, onToggle } = useDisclosure();
 
   return (
     <Box as="header" w="full" px={4} py={3} boxShadow="sm">
@@ -66,14 +66,16 @@ export default function NavBar() {
 
         <IconButton
           aria-label="Menu"
-          icon={<FiMenu />}
+          
           variant="ghost"
           display={{ base: "flex", md: "none" }}
           onClick={onToggle}
-        />
+        >
+          <FiMenu />
+        </IconButton>
       </Flex>
 
-      {isOpen && (
+      {open && (
         <Box
           as="nav"
           display={{ md: "none" }}

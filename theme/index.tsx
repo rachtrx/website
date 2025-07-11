@@ -6,6 +6,15 @@ import {
   defineConfig,
 } from "@chakra-ui/react"
 
+const textSlideIn = {
+  '0%': {
+    clipPath: 'inset(0 100% 0 0)',
+  },
+  '100%': {
+    clipPath: 'inset(0 0 0 0)',
+  },
+}
+
 const config = defineConfig({
   theme: {
     tokens: {
@@ -93,10 +102,7 @@ const config = defineConfig({
 		}
   },
   globalCss: {
-    '@keyframes textSlideIn': {
-      '0%': { clipPath: 'inset(0 100% 0 0)' },
-      '100%': { clipPath: 'inset(0 0 0 0)' },
-    },
+    '@keyframes textSlideIn': textSlideIn,
     'svg, path, .icon-animate path': {
       strokeWidth: 2,
       // strokeDasharray: 10000,
