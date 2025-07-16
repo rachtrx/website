@@ -1,22 +1,63 @@
-// pages/experience/inventory-system.tsx
-
 import {
   Box,
   Heading,
   Text,
   Stack,
-//   Image,
+  Image,
   Badge,
   Code,
   Link,
 } from "@chakra-ui/react";
+
+const screenshots = [
+  {
+    src: "/dashboard.png",
+    alt: "Dashboard",
+    caption: "Main dashboard using chartJS",
+  },
+  {
+    src: "/asset_cards.png",
+    alt: "Asset Cards",
+    caption: "Assets in card view",
+  },
+  {
+    src: "/asset_filters.png",
+    alt: "Asset Filters",
+    caption: "All pages have advanced filtering options and can toggle between card and table view",
+  },
+  {
+    src: "/users.png",
+    alt: "Users",
+    caption: "Manage user roles, devices, and active loans",
+  },
+  {
+    src: "/accessories.png",
+    alt: "Accessories",
+    caption: "Track accessories",
+  },
+  {
+    src: "/loan_form.png",
+    alt: "Loan Form",
+    caption: "Loan forms with signature features",
+  },
+  {
+    src: "/logs.png",
+    alt: "Logs",
+    caption: "Detailed audit trail of all transactions",
+  },
+  {
+    src: "/reminders.png",
+    alt: "Reminders",
+    caption: "Warnings and reminders for overdue returns",
+  },
+];
 
 export default function InventorySystemExperience() {
   return (
     <Box maxW="5xl" mx="auto" p={6}>
       <Stack gap={6}>
         <Heading size="xl">Inventory Management System</Heading>
-        <Badge colorPalette="blue" w="fit-content">Workplace Project</Badge>
+        <Badge colorScheme="blue" w="fit-content">Workplace Project</Badge>
 
         <Text>
           I built a full-featured inventory management system using <strong>Node.js</strong>,
@@ -25,19 +66,37 @@ export default function InventorySystemExperience() {
           offering robust CRUD operations and validations.
         </Text>
 
-        {/* <Image
-          src="/images/inventory-dashboard.png"
-          alt="Inventory System Dashboard"
-          borderRadius="md"
-          boxShadow="md"
-        /> */}
-
         <Text fontSize="sm" color="gray.500">
-          Screenshot: Main dashboard showing device status and quick action buttons.
+          Screenshots: Below are views from different parts of the system — dashboard, filters, logs, forms, and accessories.
         </Text>
 
-        <Heading size="md">Key Functionalities</Heading>
+        <Stack>
+          {screenshots.map((shot) => (
+            <Box
+              key={shot.src}
+              borderRadius="md"
+              overflow="hidden"
+              boxShadow="md"
+              bg="white"
+            >
+              <Image
+                src={`/experience/gos/inventory${shot.src}`}
+                alt={shot.alt}
+                objectFit="cover"
+                transition="transform 0.3s"
+                _hover={{ transform: "scale(1.03)" }}
+                width="100%"
+              />
+              <Box px={3} py={2}>
+                <Text fontWeight="semibold" fontSize="sm" textAlign="center" color="gray.700">
+                  {shot.caption}
+                </Text>
+              </Box>
+            </Box>
+          ))}
+        </Stack>
 
+        <Heading size="md">Key Functionalities</Heading>
         <Stack gap={2} pl={4}>
           <ul>
             <li>🖥️ <strong>Device Management</strong>: Add, edit, and remove laptops, tablets, phones, etc.</li>
@@ -60,8 +119,8 @@ export default function InventorySystemExperience() {
           with flexible querying.
         </Text>
 
-        <Link href="https://github.com/gos-dev/inventory_react" color="teal.500">
-          Github Repository
+        <Link href="https://github.com/gos-dev/inventory_react" color="teal.500" isExternal>
+          GitHub Repository
         </Link>
       </Stack>
     </Box>
