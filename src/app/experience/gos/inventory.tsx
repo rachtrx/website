@@ -119,7 +119,7 @@ export default function InventorySystemExperience() {
           with flexible querying.
         </Text>
 
-        <Link href="https://github.com/gos-dev/inventory_react" color="teal.500" isExternal>
+        <Link href="https://github.com/gos-dev/inventory_react" color="teal.500">
           GitHub Repository
         </Link>
       </Stack>
