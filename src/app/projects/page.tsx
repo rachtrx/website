@@ -12,6 +12,7 @@ import UpcomingProjects from "./upcoming";
 import FootballProject from "./football";
 import YieldSpreadProject from "./yields";
 import HouseHuntProject from "./house";
+import UrecaProject from "./ureca";
 
 export default function HomePage() {
   return (
@@ -30,6 +31,7 @@ export default function HomePage() {
 
         <Heading size="lg">🛠️ Projects</Heading>
 				<SimpleGrid columns={{ base: 1, md: 2 }} gap={6}>
+          <UrecaProject/>
 					<HouseHuntProject/>
 					<FootballProject/>
 					<YieldSpreadProject/>
